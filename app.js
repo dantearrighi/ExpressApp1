@@ -8,17 +8,10 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var glob = require('glob');
-/*var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-mongoose.connect(config.db);
-var db = mongoose.connection;
-db.on('error', function () {
-    throw new Error('unable to connect to database at ' + config.db);
-});
-var models = glob.sync(config.root + '/models/*.js');
-models.forEach(function (model) {
-    require(model);
-});*/
+mongoose.connect('mongodb://localhost/test');
+var cliente = mongoose.model('cliente', require('./models/cliente.js'));
 
 var app = express();
 
