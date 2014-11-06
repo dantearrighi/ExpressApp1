@@ -33,6 +33,7 @@
     <Compile Include="app.js" />
     <Compile Include="models\cliente.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\main.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\javascripts\bootstrap.js" />
@@ -59,10 +60,13 @@
     <Content Include="public\stylesheets\bootstrap.min.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="views\clientes.jade" />
+    <Content Include="views\clientesABM.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\about.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\tramites.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />

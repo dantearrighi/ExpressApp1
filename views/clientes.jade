@@ -1,0 +1,21 @@
+﻿extends layout
+
+block content
+  .jumbotron
+    h1 WASS
+  .row
+    .col-md-4
+      h2 Buscar Cliente
+      p Por DNI ó Apellido.
+      p
+        a.btn.btn-default(href='http://www.anses.gob.ar/') Buscar &raquo;
+    .col-md-4
+      h2 Nuevo Cliente
+      p Añadir nuevo cliente.
+      p
+        a.btn.btn-default(href='/crearCliente') Nuevo &raquo;
+    .col-md-4
+      h2 Listado completo
+      p Ver todos los Clientes.
+      p
+        a.btn.btn-default(href='/clientes') Ver lista &raquo;

@@ -1,0 +1,36 @@
+﻿
+block content
+            h1= "Crear cliente"
+            form(method='post', name='', action='/crearClienteDoit')
+                        table.form_table(cellspacing='5', cellpadding='5', border='0')
+                                                tbody
+                                                            tr
+                                                                        td.label Nombre:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="nombre")
+                                                            tr
+                                                                        td.label Apellido:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="apellido")
+                                                            tr
+                                                                        td.label DNI:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="dni")
+                                                            tr
+                                                                        td.label Mail:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="mail")
+                                                            tr
+                                                                        td.label Telefono:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="tel1")
+                                                            tr
+                                                                        td.label Contacto alternativo:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="tel2")
+
+                                                            tr
+                                                                        td
+                                                                                    br
+                                                                                    input.button1(type='submit', value='Crear cliente',id="createButton")
+                                                            

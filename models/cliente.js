@@ -3,15 +3,57 @@ var clienteSchema = new Schema({
     nombre: String,
     apellido: String,
     dni: Number,
+    mail: String,
+    tel1: String,
+    tel2: String,
+},
+{
+collection: 'clientes'
 });
 
-clienteSchema.static("crearClientes", function (cb) {
-    this.constructor({ nombre: "nombre" }, function (err, r) {
+
+/*clienteSchema.static("crearClienteDoit", function ( nombre,  apellido, dni,  mail,  tel1, tel2, cb) {
+    var clientenuevo = mongoose.model('Cliente', clienteSchema);
+    var cnew = new clientenuevo({ nombre: nombre, apellido: apellido, dni: dni, mail: mail, tel1: tel1, tel2: tel2 });
+    
+    cnew.save(function (err, cnew) {
+        if (err) return console.error(err);
+       
+    }) , function (err, r) {
         cb(r);
+    };
+});*/
+/*
+function crearCliente(nombre, apellido, dni, mail, tel1, tel2, callback) {
+    
+    var clientenuevo = mongoose.model('Cliente', clienteSchema);
+    var cnew = new clientenuevo({ nombre: nombre, apellido: apellido, dni: dni, mail: mail, tel1: tel1, tel2: tel2 });
+
+    cnew.save(function (err, cnew) {
+        if (err) return console.error(err);
+       
+    });
+
+    };
+
+/*clienteSchema.static("crearCliente", function (cb) {
+    this.constructor({ nombre: "nombre", apellido: "apellido", dni:"dni", mail: "mail", tel1:"tel1", tel2:"tel2"  }, function (err, r) {
+        r.nombre = nombre;
+        r.apelido = apellido;
+        r.dni = dni;
+        r.mail = mail;
+        r.tel1 = tel1;
+        r.tel2 = tel2;
+        r.save(function (err, cl) {
+            cb(cl);
+        });
+
+        cb(r);
+       
     });
 });
         
-
+*/
 
 clienteSchema.static("buscarClientes", function (cb) {
     this.find({ nombre: "cliente" }, function (err, r) {
@@ -31,6 +73,7 @@ clienteSchema.static("obtenercliente", function (id, cb) {
 clienteSchema.static("editarcliente", function (id, name, cb) {
     this.findOne({ _id: id, nombre: "cliente" }, function (err, r) {
         r.nombre = name;
+       
         r.save(function (err, cl) {
             cb(cl);
         });

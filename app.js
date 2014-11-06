@@ -10,7 +10,7 @@ var path = require('path');
 var glob = require('glob');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://' + "localhost" +'/test');
 var DB = mongoose.connection;
 DB.on('error', console.error.bind(console, 'connection error'));
 DB.once('open', function callback() {
@@ -19,7 +19,7 @@ DB.once('open', function callback() {
 var cliente = mongoose.model('cliente', require('./models/cliente.js'));
 
 
-var app = express();
+var app = exports.app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -39,12 +39,15 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
+require('./routes/main.js');
 app.get('/', routes.index);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 app.get('/clientes', routes.clientes);
-
-app.post('/crearClientes', routes.exito);
+app.get('/tramites', routes.tramites);
+app.get('/crearCliente', routes.clienteABM);
+app.post('/crearClienteDoit', routes.crearClienteDoit);
+app.post('/exito', routes.exito);
 
 
 
