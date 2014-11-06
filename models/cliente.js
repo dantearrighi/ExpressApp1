@@ -1,9 +1,17 @@
 var mongoose = require('mongoose'), Schema = mongoose.Schema;
 var clienteSchema = new Schema({
     nombre: String,
-    dni: Number,
     apellido: String,
+    dni: Number,
 });
+
+clienteSchema.static("crearClientes", function (cb) {
+    this.constructor({ nombre: "nombre" }, function (err, r) {
+        cb(r);
+    });
+});
+        
+
 
 clienteSchema.static("buscarClientes", function (cb) {
     this.find({ nombre: "cliente" }, function (err, r) {

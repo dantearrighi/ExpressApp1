@@ -11,7 +11,13 @@ var glob = require('glob');
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/test');
+var DB = mongoose.connection;
+DB.on('error', console.error.bind(console, 'connection error'));
+DB.once('open', function callback() {
+    console.log('DB está conectada con Mongoose');
+});
 var cliente = mongoose.model('cliente', require('./models/cliente.js'));
+
 
 var app = express();
 
@@ -36,6 +42,12 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
+app.get('/clientes', routes.clientes);
+
+app.post('/crearClientes', routes.exito);
+
+
+
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

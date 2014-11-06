@@ -1,0 +1,22 @@
+﻿ extends layout
+block content
+            h1= "Crear cliente"
+            form(method='post', name='', action='/exito')
+                        table.form_table(cellspacing='5', cellpadding='5', border='0')
+                                                tbody
+                                                            tr
+                                                                        td.label Nombre:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="nombre")
+                                                            tr
+                                                                        td.label Apellido:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="apellido")
+                                                            tr
+                                                                        td.label DNI:
+                                                                        td
+                                                                                    input(rows='5', class='textbox', name="dni")
+                                                            tr
+                                                                        td
+                                                                                    br
+                                                                                    input.button1(type='submit', value='Crear cliente',id="createButton")
