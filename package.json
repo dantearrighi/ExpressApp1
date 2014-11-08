@@ -8,10 +8,10 @@
     "email": ""
   },
   "dependencies": {
-    "express": "3.4.4",
+    "express": "^3.4.4",
     "glob": "~4.0.5",
     "jade": "*",
-    "mongoose": "^3.8.18",
+    "mongoose": "^3.9.4",
     "stylus": "*"
   }
 }

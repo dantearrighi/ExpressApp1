@@ -55,8 +55,17 @@ function crearCliente(nombre, apellido, dni, mail, tel1, tel2, callback) {
         
 */
 
+/*
+personaSchema.static("buscarAlumnos", function (cb) {
+    this.find({ cargo: "Alumno" }, function (err, r) {
+        cb(r);
+    });
+});
+
+*/
+
 clienteSchema.static("buscarClientes", function (cb) {
-    this.find({ nombre: "cliente" }, function (err, r) {
+    this.find({ }, function (err, r) {
         cb(r);
     });
 });
@@ -85,4 +94,4 @@ clienteSchema.static("buscarPorNombre", function (name, cb) {
     });
 });
 
-module.exports = mongoose.model('cliente', clienteSchema);
+module.exports = mongoose.model('cliente', clienteSchema); //en teoria, esto se podria llamar desde otro lado.

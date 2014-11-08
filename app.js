@@ -39,16 +39,17 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-require('./routes/main.js');
-app.get('/', routes.index);
+//require('./routes/main.js');
+app.get('/', routes.index); 
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 app.get('/clientes', routes.clientes);
 app.get('/tramites', routes.tramites);
 app.get('/crearCliente', routes.clienteABM);
-app.post('/crearClienteDoit', routes.crearClienteDoit);
-app.post('/exito', routes.exito);
-
+app.get('/exito', routes.exito); // esta crea el cliente (es el form)   NEW
+app.get('/nuevoCliente', routes.nuevoCliente); //Esta te felicita por haberlo creado
+app.post('/exito', routes.exito);  /// esta es la que lo CREA REalmente
+app.get('/listaClientes', routes.listaClientes);
 
 
 
